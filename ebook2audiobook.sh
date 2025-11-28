@@ -114,7 +114,7 @@ compare_versions() {
 if [[ -n "${arguments['help']+exists}" && ${arguments['help']} = true ]]; then
 	python "$SCRIPT_DIR/app.py" "${ARGS[@]}"
 else
-	if [ "$SCRIPT_MODE" = "$NAVITE" ]; then
+	if [ "$SCRIPT_MODE" = "$NATIVE" ]; then
 		# Check if running in a Conda or Python virtual environment
 		if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
 			CURRENT_ENV="$CONDA_PREFIX"
