@@ -74,9 +74,10 @@ if [[ ! -f "$INSTALLED_LOG" ]]; then
 	touch "$INSTALLED_LOG"
 fi
 
-if [[ -n "${arguments['script_mode']+exists}" && "${arguments['script_mode']}" == ($NATIVE|$FULL_DOCKER) ]]; then
-	SCRIPT_MODE="${arguments['script_mode']}"
+if [[ -n "${arguments['script_mode']+exists}" && ( "${arguments['script_mode']}" == "$NATIVE" || "${arguments['script_mode']}" == "$FULL_DOCKER" ) ]]; then
+    SCRIPT_MODE="${arguments['script_mode']}"
 fi
+
 
 
 if [[ "$OSTYPE" = "darwin"* ]]; then
